@@ -1,0 +1,177 @@
+[
+    {
+        "_id": "2aeacda5-2a71-48be-abad-0348df23cebe",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://localhost:6065/auth/register",
+        "url": "http://localhost:6065/auth/register",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-07-06T17:02:36.405Z",
+        "modified": "2023-07-06T17:02:36.405Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":12344\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "261552f8-fc25-4a08-b3c4-853697b6bcd3",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://localhost:6065/auth/register",
+        "url": "http://localhost:6065/auth/register",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-07-06T17:03:25.858Z",
+        "modified": "2023-07-06T17:28:06.642Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":\"12344\"\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "1271520b-8d58-46f7-8ad0-9abc7ad54d1b",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://localhost:6065/",
+        "url": "http://localhost:6065/",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-07-06T17:03:34.033Z",
+        "modified": "2023-07-06T17:03:34.033Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":12344\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "2908fbc1-fdc4-40cd-9d25-ef475851d19d",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://localhost:6065/",
+        "url": "http://localhost:6065/",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-07-06T17:03:36.961Z",
+        "modified": "2023-07-06T17:03:36.961Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":12344\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "70f78eed-082b-4192-8dce-2ae5d066a484",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://localhost:6065",
+        "url": "http://localhost:6065",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-07-06T17:26:55.693Z",
+        "modified": "2023-07-06T17:26:55.693Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":12344\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "44d5c1fb-86e3-4f2d-a65f-a28dd2bc42db",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://localhost:6065/auth",
+        "url": "http://localhost:6065/auth",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-07-06T17:27:13.908Z",
+        "modified": "2023-07-06T17:27:13.908Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":12344\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "4c50de49-e825-432e-b118-cca6589073f5",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://localhost:8080/auth/register",
+        "url": "http://localhost:8080/auth/register",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-07-06T17:34:00.682Z",
+        "modified": "2023-07-06T17:34:00.682Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":\"12344\"\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "3960f63a-aef7-462b-b361-37214b50b2bd",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://localhost:8080/auth/login",
+        "url": "http://localhost:8080/auth/login",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-07-06T17:46:52.342Z",
+        "modified": "2023-07-06T17:46:52.342Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":\"12344\"\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "efa9b810-0778-460c-9b32-ab7ab37c71c5",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://localhost:8080/auth/getuser",
+        "url": "http://localhost:8080/auth/getuser",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-07-06T17:47:14.487Z",
+        "modified": "2023-07-06T18:19:27.967Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":\"12344\"\n}",
+            "form": []
+        },
+        "auth": {
+            "type": "bearer",
+            "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE2ZmRmNTVjZjFjMjk3OGQzYWQwM2IiLCJuYW1lIjoiaXJzaGFkIiwiZW1haWwiOiJoZWxsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODg2Njc1NDF9.JI1hUzVaIe5xom942b-uA1CoTXUE5RnIVPXKryD5ylo"
+        },
+        "tests": []
+    }
+]
