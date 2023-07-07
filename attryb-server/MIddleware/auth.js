@@ -4,7 +4,7 @@ const config = require('../config');
 
 async function middleware(req, res, next) {
     const authorization = req.headers['authorization'];
-    console.log(authorization);
+
     if (authorization) {
 
         // validate the tokena

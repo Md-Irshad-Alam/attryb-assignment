@@ -61,9 +61,21 @@ async function getLoggedInUser(req, res) {
         })
     }
 }
+async function updatestatusdealer(req, res) {
+    try {
+        const {id}  = req.params;
+      let user=   await User.updateOne({_id: id}, {$set:{Dealer:true}})
+       res.status(200).send(`Congratulation to become Dealer ${user}`)
+      
+      } catch (error) {
+        res.status(401).send(`message: ${error}`)
+      }
+}
+  
 
 module.exports = {
     register,
     login,
-    getLoggedInUser
+    getLoggedInUser,
+    updatestatusdealer
 }
