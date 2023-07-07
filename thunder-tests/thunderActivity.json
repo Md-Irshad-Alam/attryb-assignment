@@ -23,17 +23,21 @@
         "colId": "history",
         "containerId": "",
         "name": "http://localhost:6065/auth/register",
-        "url": "http://localhost:6065/auth/register",
-        "method": "POST",
+        "url": "http://localhost:8080/auth/getuser",
+        "method": "GET",
         "sortNum": 0,
         "created": "2023-07-06T17:03:25.858Z",
-        "modified": "2023-07-06T17:28:06.642Z",
+        "modified": "2023-07-07T04:14:47.991Z",
         "headers": [],
         "params": [],
         "body": {
             "type": "json",
             "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":\"12344\"\n}",
             "form": []
+        },
+        "auth": {
+            "type": "bearer",
+            "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE3OGY2YTQ3YWJiNDg3NDg1ZTRmYWMiLCJuYW1lIjoiaXJzaGFkIiwiZW1haWwiOiJoZWxsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODg3MDI5OTN9.O1xxliFbLrghSX-Lee8HkoufTBL-EnjWb46HQiv8F1k"
         },
         "tests": []
     },
@@ -137,17 +141,21 @@
         "colId": "history",
         "containerId": "",
         "name": "http://localhost:8080/auth/login",
-        "url": "http://localhost:8080/auth/login",
+        "url": "http://localhost:8080/auth/create/64a7cbdbe594b549fee9e45a",
         "method": "POST",
         "sortNum": 0,
         "created": "2023-07-06T17:46:52.342Z",
-        "modified": "2023-07-06T17:46:52.342Z",
+        "modified": "2023-07-07T08:27:08.363Z",
         "headers": [],
         "params": [],
         "body": {
             "type": "json",
-            "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":\"12344\"\n}",
+            "raw": "{\r\n  \"dealer\": \"64a7b4ba28d38559e2cda0a1\",\r\n  \"image\":\"image.png\",\r\n  \"mileage\": \"50000\",\r\n  \"previous_owners\": 2,\r\n  \"maintenance_history\": \"Regularly serviced\",\r\n  \"accident_history\": \"No accidents\",\r\n  \"condition\": \"Good\",\r\n  \"kms_on_odometer\": 75000,\r\n  \"major_scratches\": false,\r\n  \"original_paint\": true,\r\n  \"accidents_reported\": 0,\r\n  \"previous_buyers\": 1,\r\n  \"registration_place\": \"New York\"\r\n}\r\n",
             "form": []
+        },
+        "auth": {
+            "type": "bearer",
+            "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE3Y2JkYmU1OTRiNTQ5ZmVlOWU0NWEiLCJuYW1lIjoiaGF5YW4iLCJlbWFpbCI6Imlyc2hhZEBnbWFpbC5jb20iLCJpYXQiOjE2ODg3MTgzMTF9.cA7bDEGNZro8hEQtI2hMp2ToAgKNsOJLgqjbgu0R_dU"
         },
         "tests": []
     },

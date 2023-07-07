@@ -1,36 +1,30 @@
-// const User = require('../models/user.model');
 
-// // Middleware to check if the user is a dealer
-// const isDealer = async (req, res, next) => {
-//   try {
-//     const {id}  = req.params;
-  
-//     // Check if the user is a dealer
-//     const user = await User.findById(id);
+const Dealer = require('../models/Dealer_inventer')
 
-//     if (!user) {
-//       return res.status(404).json({ error: 'User not found' });
-//     }
+const validateDealer = async (req, res, next) => {
+  try {
+    const dealerId = req.params.id; // Assuming the dealer ID is passed as a route parameter
 
-//     if (!user.Dealer) {
-//       return res.status(403).json({ error: 'Access forbidden. Only dealers can edit car details.' });
-//     }
+    // Fetch the dealer from the database
+    const dealer = await Dealer.findById(dealerId);
+    console.log(dealer)
+    if (!dealer) {
+      return res.status(404).json({ error: 'Dealer not found' });
+    }
 
-//     // Allow the dealer to proceed
-//     next();
-//   } catch (error) {
-//     res.status(500).json({ error: 'Failed to verify dealer' });
-//   }
-// };
+    // Check if the dealer is authorized (isDealer is true)
+    if (!dealer.isDealer) {
+      return res.status(403).json({ error: 'Unauthorized access' });
+    }
 
-// module.exports = isDealer;
-const checkDealerAuthorization = (req, res, next) => {
-  const dealer = req.user; // Assuming the authenticated dealer is stored in req.user
+    // Pass the dealer object to the next middleware or route handler
+    req.dealer = dealer;
 
-  if (!dealer || !dealer.isDealer) {
-    return res.status(403).json({ error: 'Unauthorized access' });
+    next();
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to validate dealer' });
   }
-
-  next();
 };
-module.exports  = checkDealerAuthorization
+
+
+module.exports = validateDealer;

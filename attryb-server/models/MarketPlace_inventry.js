@@ -1,48 +1,58 @@
 const mongoose = require('mongoose');
 
 const marketplaceInventorySchema = new mongoose.Schema({
+  
+  'dealer': {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Dealer',
+    required: true
+  },
+  "image":{
+    type:String,
+    required:true
+  },
 
-  mileage: {
+  "mileage": {
     type: String,
     required: true
   },
-  previous_owners: {
+  "previous_owners": {
     type: Number,
     required: true
   },
-  maintenance_history: {
+  "maintenance_history": {
     type: String,
     required: true
   },
-  accident_history: {
+  "accident_history": {
     type: String,
     required: true
   },
-  condition: {
+  "condition": {
     type: String,
     required: true
   },
-  kms_on_odometer: {
+  "kms_on_odometer": {
     type: Number,
     required: true
   },
-  major_scratches: {
+  "major_scratches": {
     type: Boolean,
     default: false
   },
-  original_paint: {
+  "original_paint": {
     type: Boolean,
     default: true
   },
-  accidents_reported: {
+  "accidents_reported": {
     type: Number,
     default: 0
   },
-  previous_buyers: {
+  "previous_buyers": {
     type: Number,
     default: 0
   },
-  registration_place: {
+  "registration_place": {
     type: String,
     required: true
   }

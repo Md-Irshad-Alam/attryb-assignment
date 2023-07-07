@@ -1,0 +1,97 @@
+{
+    "_id": "e4027460-d39d-48e3-8b38-70a3a86a8921",
+    "colName": "Auth",
+    "created": "2023-07-07T03:37:51.601Z",
+    "sortNum": 10000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2354e32a-7ddf-4bfa-be99-578bcdbc81e5",
+            "colId": "e4027460-d39d-48e3-8b38-70a3a86a8921",
+            "containerId": "",
+            "name": "Update-user",
+            "url": "http://localhost:8080/auth/dealer/64a7cbdbe594b549fee9e45a",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2023-07-07T03:38:26.263Z",
+            "modified": "2023-07-07T08:28:28.254Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"isDealer\":true\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE3YjRiYTI4ZDM4NTU5ZTJjZGEwYTEiLCJuYW1lIjoiaXJzaGFkIiwiZW1haWwiOiJoZWxsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODg3MTIzOTF9._-Ln_Bqn8vqHHDGLBCXtn01uome1l_UKDUE82qQGiig"
+            },
+            "tests": []
+        },
+        {
+            "_id": "75a223f5-bac7-4abc-b9e5-940dd4fa244a",
+            "colId": "e4027460-d39d-48e3-8b38-70a3a86a8921",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:8080/auth/makeinvt64a7853b1808a1858239bee2",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-07-07T03:38:49.032Z",
+            "modified": "2023-07-07T04:58:17.360Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"hundai\",\n  \"year\":2012,\n  \"list_price\":450000,\n  \"available_colors\":\"red , blue, black\",\n  \"mileage\":\"15km/l\",\n  \"power\":\"450bhp\",\n  \"max_speed\":\"300 Km/h\"\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "eab2161d-c1dd-4bda-bd48-8d44ce0c1009",
+            "colId": "e4027460-d39d-48e3-8b38-70a3a86a8921",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:8080/auth/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-07-07T03:41:06.591Z",
+            "modified": "2023-07-07T08:25:11.055Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"hayan\",\n  \"email\":\"irshad@gmail.com\",\n  \"password\":\"12344\"\n  \n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE3YjRiYTI4ZDM4NTU5ZTJjZGEwYTEiLCJuYW1lIjoiaXJzaGFkIiwiZW1haWwiOiJoZWxsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODg3MTIzOTF9._-Ln_Bqn8vqHHDGLBCXtn01uome1l_UKDUE82qQGiig"
+            },
+            "tests": []
+        },
+        {
+            "_id": "ea180cf2-8583-40f5-99dc-fa0f4099ecc6",
+            "colId": "e4027460-d39d-48e3-8b38-70a3a86a8921",
+            "containerId": "",
+            "name": "Getuser",
+            "url": "http://localhost:8080/auth/getuser",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-07-07T03:42:29.606Z",
+            "modified": "2023-07-07T03:42:29.606Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"irshad\",\n  \"email\":\"hello@gmail.com\",\n  \"password\":\"12344\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE2ZmRmNTVjZjFjMjk3OGQzYWQwM2IiLCJuYW1lIjoiaXJzaGFkIiwiZW1haWwiOiJoZWxsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODg3MDEyNTB9.wyRJxJGfQRBZNVNf21NmCW-rnh9hfL4I935PpW0U0_0"
+            },
+            "tests": []
+        }
+    ]
+}

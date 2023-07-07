@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const  User  = require('../models/user.model')
+const  User  = require('../models/Dealer_inventer')
 const config = require('../config');
 
 async function middleware(req, res, next) {

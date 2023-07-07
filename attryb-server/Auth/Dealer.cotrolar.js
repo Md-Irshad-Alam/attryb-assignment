@@ -1,4 +1,4 @@
-const User = require('../models/user.model')
+const Dealer = require('../models/Dealer_inventer')
 const config  = require('../config')
 const jwt = require('jsonwebtoken')
 
@@ -13,12 +13,12 @@ let register=async(req,res)=>{
     try {
         let {name, email, password} = req.body;
         
-        let user = await User.findOne({email})
+        let user = await Dealer.findOne({email})
         console.log(user)
         if(user){
             return res.send({error:"user email already registered"})
         }else{
-            user = await User.create(req.body)
+            user = await Dealer.create(req.body)
           
             return res.status(200).send({email : user.email, id : user._id});
         }
@@ -30,7 +30,7 @@ let register=async(req,res)=>{
 
 const login = async(req, res) => {
     try {
-        const user  = await User.findOne({email : req.body.email});
+        const user  = await Dealer.findOne({email : req.body.email});
 
         if (!user) return res.status(404).send({message: "Invalid Credentials"});
 
@@ -61,10 +61,12 @@ async function getLoggedInUser(req, res) {
         })
     }
 }
-async function updatestatusdealer(req, res) {
+
+async function MakeDealer(req, res) {
     try {
         const {id}  = req.params;
-      let user=   await User.updateOne({_id: id}, {$set:{Dealer:true}})
+        console.log(id)
+      let user=   await Dealer.updateOne({_id: id}, {$set:{isDealer:true}})
        res.status(200).send(`Congratulation to become Dealer ${user}`)
       
       } catch (error) {
@@ -77,5 +79,5 @@ module.exports = {
     register,
     login,
     getLoggedInUser,
-    updatestatusdealer
+    MakeDealer
 }

@@ -1,6 +1,5 @@
 const express =require('express')
 const connectDatabase  = require('./database/db')
-const register = require('./Auth/auth.cotrolar');
 const router = require('./Router/router');
 const cors = require('cors');
 

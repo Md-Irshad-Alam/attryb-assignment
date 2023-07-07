@@ -1,19 +1,14 @@
 const express = require('express');
-const {register, login, getLoggedInUser, updatestatusdealer} = require('../Auth/auth.cotrolar');
-const middleware  = require('../MIddleware/auth');
-const isDealer  = require('../MIddleware/Dealer');
-
+const {register, login, getLoggedInUser, MakeDealer} = require('../Auth/Dealer.cotrolar');
 const {
-  getAllMarketplaceEntries,
-  getMarketplaceEntryById,
- 
-}  = require("../Auth/Dealer.controlar")
-const {createOEMSpecs,}  = require("../Auth/OEM.Controller")
-
-const {createMarketplaceEntry,updateMarketplaceEntryById,deleteMarketplaceEntryById} = require("../Auth/Market.controller")
-  
-const {checkDealerAuthorization} = require("../MIddleware/Dealer")
-
+  createMarketplaceEntry,
+  updateMarketplaceEntryById,
+  deleteMarketplaceEntryById,
+  deleteMultipleMarketplaceEntries
+} = require("../Auth/Market.controller")
+const middleware  = require('../MIddleware/auth');
+const {createOEMSpecs}  = require("../Auth/OEM.Controller")
+const validateDealer = require("../MIddleware/Dealer")
 const router = express.Router();
 
 
@@ -27,17 +22,17 @@ router.get("/", (req,res)=>{
 router.post('/register', register);
 router.post('/login', login);
 router.get('/getuser', middleware, getLoggedInUser)
-
-router.put('/dealer:id',middleware, updatestatusdealer)
+router.put('/dealer/:id',middleware, MakeDealer)
 
 // Market_inventry routes
-router.post('/createinvt', checkDealerAuthorization, createMarketplaceEntry)
 
-router.post('/deleteinvt/:id', checkDealerAuthorization, deleteMarketplaceEntryById)
+router.post("/create/:id", validateDealer, createMarketplaceEntry);
+router.put("/update/:id", validateDealer, updateMarketplaceEntryById);
+router.delete("/delete/:id",validateDealer, deleteMarketplaceEntryById)
+router.delete("/multidelete/:id",validateDealer, deleteMultipleMarketplaceEntries)
 
-router.put('/updateinvt/:id',checkDealerAuthorization, updateMarketplaceEntryById)
 
-router.get('/getuser', middleware, getLoggedInUser)
+// OEM_inventry 
 
 
 module.exports = router;

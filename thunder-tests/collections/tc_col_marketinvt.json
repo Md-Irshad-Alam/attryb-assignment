@@ -1,0 +1,32 @@
+{
+    "_id": "30e07788-2cce-4846-ac1b-4a08d9d09ae5",
+    "colName": "Market_invt",
+    "created": "2023-07-07T07:13:58.415Z",
+    "sortNum": 20000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "eac7f14a-23bc-487f-921a-9b4ff479c508",
+            "colId": "30e07788-2cce-4846-ac1b-4a08d9d09ae5",
+            "containerId": "",
+            "name": "market_invt",
+            "url": "http://localhost:8080/auth/create",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-07-07T07:13:58.428Z",
+            "modified": "2023-07-07T07:13:58.428Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"mileage\": \"30 Km/L\",\n  \"previous_owners\":\"Irshad\",\n  \"maintenance_history\":\"body replaced and bonet \" ,\n  \"accident_history\":\"No accident \",\n  \"condition\":\"Good\",\n  \"kms_on_odometer\": 400000,\n  \"major_scratches\":\"no scratch\",\n  \"original_paint\":\"No \",\n  \"accidents_reported\":\"No record\",\n  \"previous_buyers\":\"Hayan\",\n  \"registration_place\":\"jharkhand\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE3YjRiYTI4ZDM4NTU5ZTJjZGEwYTEiLCJuYW1lIjoiaXJzaGFkIiwiZW1haWwiOiJoZWxsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODg3MTM2MjN9.u-n7o1bG64wB_xDXJgeC_M1rr7PNFKFD4NBjNDOu8FM"
+            },
+            "tests": []
+        }
+    ]
+}

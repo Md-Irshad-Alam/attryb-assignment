@@ -4,9 +4,15 @@ const MarketplaceInventory = require('../models/MarketPlace_inventry');
 const createMarketplaceEntry = async (req, res) => {
   try {
     const {
-      kms_on_odometer,
-      major_scratches,
+      dealer,
+      image,
+      mileage,
+      previous_owners,
+      maintenance_history,
+      accident_history,
+      condition,
       original_paint,
+      kms_on_odometer,
       accidents_reported,
       previous_buyers,
       registration_place
@@ -14,12 +20,18 @@ const createMarketplaceEntry = async (req, res) => {
 
     // Create a new marketplace entry document
     const marketplaceEntry = new MarketplaceInventory({
-      kms_on_odometer,
-      major_scratches,
+      dealer,
+      image,
+      mileage,
+      previous_owners,
+      maintenance_history,
+      accident_history,
+      condition,
       original_paint,
       accidents_reported,
       previous_buyers,
-      registration_place
+      registration_place,
+      kms_on_odometer
     });
 
     // Save the marketplace entry in the database
@@ -27,6 +39,7 @@ const createMarketplaceEntry = async (req, res) => {
 
     res.status(201).json(marketplaceEntry);
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: 'Failed to create marketplace entry' });
   }
 };
@@ -49,6 +62,7 @@ const updateMarketplaceEntryById = async (req, res) => {
 
     res.json(updatedMarketplaceEntry);
   } catch (error) {
+
     res.status(500).json({ error: 'Failed to update marketplace entry' });
   }
 };
