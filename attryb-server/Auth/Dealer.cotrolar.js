@@ -62,17 +62,39 @@ async function getLoggedInUser(req, res) {
     }
 }
 
-async function MakeDealer(req, res) {
+const MakeDealer = async (req, res) => {
     try {
-        const {id}  = req.params;
-        console.log(id)
-      let user=   await Dealer.updateOne({_id: id}, {$set:{isDealer:true}})
-       res.status(200).send(`Congratulation to become Dealer ${user}`)
-      
+        const userId = req.user._id;
+    
+        // Find the dealer by user ID and update the dealer status
+        const updatedDealer = await Dealer.findByIdAndUpdate(
+          userId,
+          { isDealer: true },
+          { new: true }
+        );
+    
+        if (!updatedDealer) {
+          return res.status(404).json({ error: 'Dealer not found' });
+        }
+    
+        if (updatedDealer.isDealer) {
+          return res.status(400).json({ error: 'Dealer status is already true' });
+        }
+    
+        // Update the token with the latest dealer data
+        const updatedToken = req.token;
+    
+        res.json({
+          message: 'Dealer status updated successfully',
+          isDealer: updatedDealer.isDealer,
+          token: updatedToken,
+        });
       } catch (error) {
-        res.status(401).send(`message: ${error}`)
+        console.error(error);
+        res.status(500).json({ error: 'Failed to update dealer status' });
       }
-}
+  };
+  
   
 
 module.exports = {

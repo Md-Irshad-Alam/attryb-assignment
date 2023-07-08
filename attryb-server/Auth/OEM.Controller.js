@@ -6,6 +6,11 @@ const createOEMSpecs = async (req, res) => {
   try {
     const { name, year, list_price, available_colors, mileage, power, max_speed } = req.body;
 
+    // Validate required fields
+    if (!name || !year || !list_price || !available_colors || !mileage || !power || !max_speed) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
     // Create a new OEM specs entry
     const oemSpecs = await OEM_Specs.create({
       name,
@@ -19,11 +24,10 @@ const createOEMSpecs = async (req, res) => {
 
     res.status(201).json(oemSpecs);
   } catch (error) {
-    console.log(error)
+    console.error(error);
     res.status(500).json({ error: 'Failed to create OEM specs entry' });
   }
 };
-
 // Controller function to get all OEM specs entries
 const getAllOEMSpecs = async (req, res) => {
   try {
@@ -35,43 +39,12 @@ const getAllOEMSpecs = async (req, res) => {
   }
 };
 
-// Controller function to get a specific OEM specs entry by ID
-const getOEMSpecsById = async (req, res) => {
-  try {
-    const { id } = req.params;
 
-    const oemSpecs = await OEM_Specs.findById(id);
 
-    if (!oemSpecs) {
-      return res.status(404).json({ error: 'OEM specs entry not found' });
-    }
 
-    res.json(oemSpecs);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to retrieve OEM specs entry' });
-  }
-};
-
-// Controller function to delete a specific OEM specs entry by ID
-const deleteOEMSpecsById = async (req, res) => {
-  try {
-    const { id } = req.params;
-
-    const deletedEntry = await OEM_Specs.findByIdAndRemove(id);
-
-    if (!deletedEntry) {
-      return res.status(404).json({ error: 'OEM specs entry not found' });
-    }
-
-    res.json({ message: 'OEM specs entry deleted successfully' });
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to delete OEM specs entry' });
-  }
-};
 
 module.exports = {
   createOEMSpecs,
   getAllOEMSpecs,
-  getOEMSpecsById,
-  deleteOEMSpecsById
+
 };

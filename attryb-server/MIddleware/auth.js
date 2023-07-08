@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const  User  = require('../models/Dealer_inventer')
+const  Dealer  = require('../models/Dealer_inventer')
 const config = require('../config');
 
 async function middleware(req, res, next) {
@@ -18,10 +18,10 @@ async function middleware(req, res, next) {
     
                 let user = jwt.decode(token);
     
-                user = await User.findById(user._id);
+                user = await Dealer.findById(user._id);
     
                 user = user.toJSON();
-    
+                console.log(user)
                 delete user.password;
     
                 // Modify the request object to contain the authenticated user

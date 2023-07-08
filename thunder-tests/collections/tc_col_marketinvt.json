@@ -10,21 +10,44 @@
             "colId": "30e07788-2cce-4846-ac1b-4a08d9d09ae5",
             "containerId": "",
             "name": "market_invt",
-            "url": "http://localhost:8080/auth/create",
-            "method": "POST",
+            "url": "http://localhost:8080/auth/delete/64a8dec7806d79c43e26205f",
+            "method": "DELETE",
             "sortNum": 10000,
             "created": "2023-07-07T07:13:58.428Z",
-            "modified": "2023-07-07T07:13:58.428Z",
+            "modified": "2023-07-08T05:51:24.021Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"mileage\": \"30 Km/L\",\n  \"previous_owners\":\"Irshad\",\n  \"maintenance_history\":\"body replaced and bonet \" ,\n  \"accident_history\":\"No accident \",\n  \"condition\":\"Good\",\n  \"kms_on_odometer\": 400000,\n  \"major_scratches\":\"no scratch\",\n  \"original_paint\":\"No \",\n  \"accidents_reported\":\"No record\",\n  \"previous_buyers\":\"Hayan\",\n  \"registration_place\":\"jharkhand\"\n}",
+                "raw": "{\n  \"image\":\"updated \",\n  \"mileage\": \"45999\",\n  \"previous_owners\": 2,\n  \"maintenance_history\": \"Regularly serviced\",\n  \"accident_history\": \"No accidents\",\n  \"condition\": \"Good\",\n  \"kms_on_odometer\": 75000,\n  \"major_scratches\": false,\n  \"original_paint\": true,\n  \"accidents_reported\": 0,\n  \"previous_buyers\": 1,\n  \"registration_place\": \"jharkhand\"\n}\n",
                 "form": []
             },
             "auth": {
                 "type": "bearer",
-                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE3YjRiYTI4ZDM4NTU5ZTJjZGEwYTEiLCJuYW1lIjoiaXJzaGFkIiwiZW1haWwiOiJoZWxsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODg3MTM2MjN9.u-n7o1bG64wB_xDXJgeC_M1rr7PNFKFD4NBjNDOu8FM"
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE4Y2NkMTM4NDdkNWM1ZDgyMDE2ODMiLCJuYW1lIjoiaXJzaGFkIiwiZW1haWwiOiJoZWxsbzJAZ21haWwuY29tIiwiaWF0IjoxNjg4Nzg1OTE1fQ.PBT6NcH0jPJMt4A-uNZwuYL3XkGjvbQ8Fzw9rjaodOo"
+            },
+            "tests": []
+        },
+        {
+            "_id": "aa914c34-7786-4652-a725-a45678ed32ea",
+            "colId": "30e07788-2cce-4846-ac1b-4a08d9d09ae5",
+            "containerId": "",
+            "name": "create",
+            "url": "http://localhost:8080/auth/creatoem",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-07-07T13:45:14.722Z",
+            "modified": "2023-07-07T17:30:44.707Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"name\":\"Audi\",\"year\":1975,\"list_price\":917587,\"available_colors\":[\"blue\",\"red\",\"black\"],\"mileage\":\"14.5km/l\",\"power\":\"200BHP\",\"max_speed\":\"240Km/h\"}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE3Y2JkYmU1OTRiNTQ5ZmVlOWU0NWEiLCJuYW1lIjoiaGF5YW4iLCJlbWFpbCI6Imlyc2hhZEBnbWFpbC5jb20iLCJpYXQiOjE2ODg3MTgzMTF9.cA7bDEGNZro8hEQtI2hMp2ToAgKNsOJLgqjbgu0R_dU"
             },
             "tests": []
         }

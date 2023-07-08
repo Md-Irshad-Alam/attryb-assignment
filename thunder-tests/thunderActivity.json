@@ -141,21 +141,21 @@
         "colId": "history",
         "containerId": "",
         "name": "http://localhost:8080/auth/login",
-        "url": "http://localhost:8080/auth/create/64a7cbdbe594b549fee9e45a",
-        "method": "POST",
+        "url": "http://localhost:8080/auth/getuser",
+        "method": "GET",
         "sortNum": 0,
         "created": "2023-07-06T17:46:52.342Z",
-        "modified": "2023-07-07T08:27:08.363Z",
+        "modified": "2023-07-08T05:49:24.312Z",
         "headers": [],
         "params": [],
         "body": {
             "type": "json",
-            "raw": "{\r\n  \"dealer\": \"64a7b4ba28d38559e2cda0a1\",\r\n  \"image\":\"image.png\",\r\n  \"mileage\": \"50000\",\r\n  \"previous_owners\": 2,\r\n  \"maintenance_history\": \"Regularly serviced\",\r\n  \"accident_history\": \"No accidents\",\r\n  \"condition\": \"Good\",\r\n  \"kms_on_odometer\": 75000,\r\n  \"major_scratches\": false,\r\n  \"original_paint\": true,\r\n  \"accidents_reported\": 0,\r\n  \"previous_buyers\": 1,\r\n  \"registration_place\": \"New York\"\r\n}\r\n",
+            "raw": "{\n  \"email\":\"hello2@gmail.com\",\n  \"password\":\"123456789\"\n}\n\n",
             "form": []
         },
         "auth": {
             "type": "bearer",
-            "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE3Y2JkYmU1OTRiNTQ5ZmVlOWU0NWEiLCJuYW1lIjoiaGF5YW4iLCJlbWFpbCI6Imlyc2hhZEBnbWFpbC5jb20iLCJpYXQiOjE2ODg3MTgzMTF9.cA7bDEGNZro8hEQtI2hMp2ToAgKNsOJLgqjbgu0R_dU"
+            "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGE4Y2NkMTM4NDdkNWM1ZDgyMDE2ODMiLCJuYW1lIjoiaXJzaGFkIiwiZW1haWwiOiJoZWxsbzJAZ21haWwuY29tIiwiaWF0IjoxNjg4Nzg1OTE1fQ.PBT6NcH0jPJMt4A-uNZwuYL3XkGjvbQ8Fzw9rjaodOo"
         },
         "tests": []
     },

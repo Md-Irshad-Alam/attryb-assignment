@@ -1,30 +1,50 @@
+const jwt = require('jsonwebtoken');
+const Dealer = require('../models/Dealer_inventer');
+const config = require('../config');
 
-const Dealer = require('../models/Dealer_inventer')
+async function validateDealer(req, res, next) {
+  const authorization = req.headers['authorization'];
 
-const validateDealer = async (req, res, next) => {
-  try {
-    const dealerId = req.params.id; // Assuming the dealer ID is passed as a route parameter
+  if (authorization) {
+    const token = authorization.split(' ').pop();
 
-    // Fetch the dealer from the database
-    const dealer = await Dealer.findById(dealerId);
-    console.log(dealer)
-    if (!dealer) {
-      return res.status(404).json({ error: 'Dealer not found' });
+    if (token) {
+      try {
+        const decodedToken = jwt.verify(token, config.Secret_key);
+
+        const dealer = await Dealer.findById(decodedToken._id);
+        console.log(req.originalUrl)
+      //  console.log(dealer)
+        if (!dealer) {
+          return res.status(401).json({ message: 'Dealer not found' });
+        }
+
+        // Check if the user is a dealer
+        if (dealer.isDealer==false) {
+          return res.status(401).json({ message: 'User is not a dealer' });
+        }
+        // Check if the dealer status is already true
+        if (req.originalUrl === '/auth/dealer' && dealer.isDealer==true) {
+          return res.status(400).json({ message: 'Dealer status is already true' });
+        }
+
+        // Update the token with the latest dealer data
+        const updatedToken = jwt.sign(dealer.toJSON(), config.Secret_key, { expiresIn: '1h' });
+
+        // Modify the request object to contain the authenticated dealer and updated token
+        req.user = dealer.toJSON();
+        req.token = updatedToken;
+
+        next();
+      } catch (err) {
+        return res.status(401).json({ message: 'Invalid token provided' });
+      }
+    } else {
+      return res.status(401).json({ message: 'No auth token present' });
     }
-
-    // Check if the dealer is authorized (isDealer is true)
-    if (!dealer.isDealer) {
-      return res.status(403).json({ error: 'Unauthorized access' });
-    }
-
-    // Pass the dealer object to the next middleware or route handler
-    req.dealer = dealer;
-
-    next();
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to validate dealer' });
+  } else {
+    return res.status(401).json({ message: 'User is not logged in' });
   }
-};
-
+}
 
 module.exports = validateDealer;

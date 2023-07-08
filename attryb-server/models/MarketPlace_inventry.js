@@ -7,6 +7,11 @@ const marketplaceInventorySchema = new mongoose.Schema({
     ref: 'Dealer',
     required: true
   },
+
+  "name":{
+    type:String,
+    required:true
+  },
   "image":{
     type:String,
     required:true
@@ -37,11 +42,11 @@ const marketplaceInventorySchema = new mongoose.Schema({
     required: true
   },
   "major_scratches": {
-    type: Boolean,
+    type: String,
     default: false
   },
   "original_paint": {
-    type: Boolean,
+    type: String,
     default: true
   },
   "accidents_reported": {
@@ -55,7 +60,8 @@ const marketplaceInventorySchema = new mongoose.Schema({
   "registration_place": {
     type: String,
     required: true
-  }
+  },
+  
 });
 
 const MarketplaceInventory = mongoose.model('MarketPlaceInventory', marketplaceInventorySchema);
